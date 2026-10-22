@@ -1,147 +1,118 @@
-# Mediwork 2.0
+# Mediwork
 
-Sistema médico empresarial con gestión de pacientes, cuestionarios, resultados de exámenes, citas y agente conversacional.
+**Sistema integral de gestión médica | Desarrollo Full-Stack**
 
-## Stack
+Mediwork es una plataforma web orientada a la gestión y digitalización de procesos médicos y administrativos. El sistema integra distintos módulos para centralizar operaciones, facilitar el manejo de información y optimizar los flujos de trabajo de una organización del sector salud.
 
-- **Frontend:** React 18 + TypeScript + Vite + Tailwind CSS
-- **Backend:** Node.js + Express + Prisma ORM
-- **Base de datos:** PostgreSQL
-- **Infraestructura:** Docker + Docker Compose
+El proyecto fue desarrollado durante mi experiencia profesional en **Laia Technologies**, donde participé como líder del proyecto y desarrolladora, trabajando en diferentes capas de la aplicación.
 
----
+> **Estado del proyecto:** Código fuente disponible para consulta. La ejecución completa requiere configurar credenciales, variables de entorno y servicios externos que no forman parte de este repositorio.
 
-## Requisitos
+## Funcionalidades principales
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y corriendo
-- Git
+Entre los módulos y funcionalidades presentes en el código se encuentran:
 
----
+- **Autenticación y usuarios:** acceso al sistema, gestión de usuarios y controles según roles.
+- **Gestión de pacientes:** consulta y administración de información de pacientes.
+- **Agenda médica:** herramientas para la gestión y seguimiento de citas.
+- **Expedientes médicos:** organización de información y documentación relacionada con pacientes.
+- **Recetas y exámenes médicos:** funcionalidades para gestionar información clínica.
+- **Encuestas y formularios:** creación, configuración y captura de respuestas.
+- **Empresas y portales:** funcionalidades para la administración de empresas y sus usuarios.
+- **Inventario y punto de venta:** administración de productos, movimientos y operaciones comerciales.
+- **Reportes:** herramientas para consultar y organizar información operativa.
+- **Integraciones externas:** funcionalidades que dependen de servicios y credenciales configurados por entorno.
 
-## Correr el proyecto (Docker)
+*La disponibilidad de cada funcionalidad depende de la configuración y de los servicios externos necesarios para ejecutarla.*
 
-### 1. Clonar el repositorio
+## Tecnologías
 
-```bash
-git clone https://github.com/tu-usuario/mediwork-2.0.git
-cd mediwork-2.0
-```
-
-### 2. Configurar variables de entorno
-
-```bash
-cp backend/.env.example backend/.env
-```
-
-Edita `backend/.env` y completa los valores marcados:
-
-| Variable | Descripción |
+| Área | Tecnologías |
 |---|---|
-| `JWT_SECRET` | Cualquier string largo y aleatorio |
-| `GOOGLE_API_KEY` | API key de Google (opcional) |
-| `WHATSAPP_ACCESS_TOKEN` | Token de WhatsApp Business (opcional) |
+| Frontend | React, TypeScript, Vite |
+| Backend | Node.js, Express, TypeScript |
+| Base de datos | PostgreSQL |
+| ORM y acceso a datos | Prisma |
+| Infraestructura | Docker, Nginx |
+| Desarrollo de interfaces | CSS y Tailwind CSS |
 
-> Las variables de base de datos ya vienen listas para Docker. No las cambies.
+## Arquitectura general
 
-### 3. Levantar todo
+Mediwork utiliza una arquitectura cliente-servidor que separa la interfaz de usuario, la lógica de negocio y la persistencia de datos.
 
-```bash
-docker compose up --build
-```
-
-Primera vez tarda unos minutos mientras descarga imágenes y construye. Las siguientes veces es mucho más rápido.
-
-### 4. Abrir la app
-
-- **App:** [http://localhost:3000](http://localhost:3000)
-- **API:** [http://localhost:4000](http://localhost:4000)
-
----
-
-## Roles del sistema
-
-| Rol | Descripción |
-|---|---|
-| `ADMIN` | Acceso completo: pacientes, empresas, usuarios, inventario, ventas |
-| `DOCTOR` | Pacientes, citas, resultados de exámenes |
-| `PACIENTE_TABLET` | Vista tablet (kiosco) para llenar cuestionario médico |
-| `PACIENTE` | Portal del paciente: ve solo su propio expediente y llena su encuesta |
-| `EMPRESA` | Portal de empresa: ve los resultados de sus empleados |
-
-### Cuestionario público (sin login)
-
-Los pacientes pueden registrarse llenando su cuestionario en:
-
-```
-http://localhost:3000/encuesta
-```
-
-Al enviarlo se crea automáticamente su expediente y aparecen en la lista de pacientes.
-
----
-
-## Estructura del proyecto
-
-```
-mediwork-2.0/
-├── backend/
-│   ├── prisma/
-│   │   └── schema.prisma     # Modelos de la base de datos
-│   ├── src/
-│   │   ├── routes/           # Endpoints REST
-│   │   ├── middleware/        # Autenticación JWT
-│   │   └── index.ts
-│   ├── .env.example          # Plantilla de variables de entorno
-│   └── Dockerfile
+```text
+Mediwork
+│
 ├── frontend/
 │   ├── src/
+│   │   ├── components/
 │   │   ├── pages/
-│   │   │   ├── admin/        # Vistas de administrador
-│   │   │   ├── doctor/       # Vistas de doctor
-│   │   │   ├── paciente/     # Vista tablet (cuestionario)
-│   │   │   ├── public/       # Cuestionario sin login
-│   │   │   └── shared/       # Pacientes, detalle de paciente
-│   │   ├── components/       # Layout, componentes reutilizables
-│   │   ├── services/         # Cliente HTTP (axios)
-│   │   └── stores/           # Auth, tema (claro/oscuro)
-│   └── Dockerfile
+│   │   ├── services/
+│   │   └── stores/
+│   └── package.json
+│
+├── backend/
+│   ├── src/
+│   │   ├── middleware/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── scripts/
+│   ├── prisma/
+│   └── package.json
+│
 ├── docker-compose.yml
-└── nginx.conf
+├── Dockerfile.nginx
+└── README.md
 ```
+
+El frontend se comunica con el backend mediante servicios y rutas de API. El backend centraliza la lógica de negocio y utiliza Prisma para interactuar con PostgreSQL.
+
+## Mi contribución
+
+Durante el desarrollo de Mediwork participé en el liderazgo y la construcción técnica del sistema, trabajando en diferentes componentes de la solución:
+
+- Desarrollo de interfaces y componentes del frontend.
+- Implementación de funcionalidades y endpoints del backend.
+- Diseño e integración de modelos de datos con PostgreSQL y Prisma.
+- Desarrollo de funcionalidades de autenticación y gestión de usuarios.
+- Implementación e integración de módulos administrativos y médicos.
+- Integración de servicios externos y configuración de funcionalidades dependientes del entorno.
+- Organización y evolución de la arquitectura de la aplicación.
+
+Mi participación abarcó tanto el desarrollo de funcionalidades como la integración de los distintos componentes necesarios para construir una solución web integral.
+
+## Estructura del repositorio
+
+| Directorio o archivo | Descripción |
+|---|---|
+| `frontend/` | Aplicación web y componentes de interfaz. |
+| `backend/` | API, lógica de negocio y servicios del sistema. |
+| `backend/prisma/` | Esquema y recursos relacionados con la base de datos. |
+| `docker-compose.yml` | Configuración de servicios para el entorno de desarrollo. |
+| `docker-compose.prod.yml` | Configuración orientada al despliegue. |
+| `nginx.conf` | Configuración de Nginx. |
+
+## Configuración y ejecución
+
+El proyecto requiere un entorno de desarrollo compatible con Node.js, PostgreSQL y las dependencias definidas por cada aplicación.
+
+Para preparar un entorno local:
+
+1. Clonar el repositorio.
+2. Instalar las dependencias del frontend y del backend.
+3. Configurar las variables de entorno a partir de los archivos `.env.example`.
+4. Configurar una instancia de PostgreSQL y los servicios externos necesarios.
+5. Aplicar las migraciones de base de datos que correspondan al esquema del proyecto.
+6. Ejecutar el frontend y el backend siguiendo sus configuraciones respectivas.
+
+**Nota:** Las instrucciones anteriores son una guía general. Los comandos concretos y las variables necesarias deben verificarse en los archivos de configuración del repositorio. No se incluyen credenciales de producción.
+
+## Información adicional
+
+Este repositorio se presenta como parte de mi portafolio profesional para mostrar experiencia en desarrollo web full-stack, integración de sistemas, diseño de bases de datos y construcción de aplicaciones modulares.
+
+Algunas funcionalidades pueden requerir servicios externos, variables de entorno y credenciales que no están disponibles en este repositorio. Por ello, no se garantiza que la aplicación pueda ejecutarse completamente con una configuración local básica.
 
 ---
 
-## Actualizar schema de base de datos
-
-Si modificas `backend/prisma/schema.prisma` mientras Docker está corriendo:
-
-```bash
-docker cp backend/prisma/schema.prisma mediwork-backend:/app/prisma/schema.prisma
-docker exec mediwork-backend npx prisma db push
-docker restart mediwork-backend
-```
-
----
-
-## Desarrollo local (sin Docker)
-
-### Backend
-
-```bash
-cd backend
-cp .env.example .env
-# Cambia DATABASE_URL a tu PostgreSQL local
-npm install
-npx prisma db push
-npm run dev
-# API en http://localhost:4000
-```
-
-### Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-# App en http://localhost:5173
-```
+**Mediwork — Desarrollo web full-stack y gestión integral de procesos médicos.**
