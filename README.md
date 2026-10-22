@@ -1,118 +1,189 @@
 # Mediwork
 
-**Sistema integral de gestión médica | Desarrollo Full-Stack**
+### Sistema integral de gestión médica | Desarrollo Full-Stack
 
-Mediwork es una plataforma web orientada a la gestión y digitalización de procesos médicos y administrativos. El sistema integra distintos módulos para centralizar operaciones, facilitar el manejo de información y optimizar los flujos de trabajo de una organización del sector salud.
-
-El proyecto fue desarrollado durante mi experiencia profesional en **Laia Technologies**, donde participé como líder del proyecto y desarrolladora, trabajando en diferentes capas de la aplicación.
+Mediwork es una plataforma web para la gestión y digitalización de procesos médicos y administrativos. Centraliza operaciones clínicas, administrativas y comerciales en un solo sistema, orientado a organizaciones del sector salud.
 
 > **Estado del proyecto:** Código fuente disponible para consulta. La ejecución completa requiere configurar credenciales, variables de entorno y servicios externos que no forman parte de este repositorio.
 
+---
+
 ## Funcionalidades principales
 
-Entre los módulos y funcionalidades presentes en el código se encuentran:
-
-- **Autenticación y usuarios:** acceso al sistema, gestión de usuarios y controles según roles.
-- **Gestión de pacientes:** consulta y administración de información de pacientes.
-- **Agenda médica:** herramientas para la gestión y seguimiento de citas.
-- **Expedientes médicos:** organización de información y documentación relacionada con pacientes.
-- **Recetas y exámenes médicos:** funcionalidades para gestionar información clínica.
+- **Autenticación y usuarios:** inicio de sesión, gestión de cuentas y control de acceso por roles.
+- **Gestión de pacientes:** consulta y administración de información clínica.
+- **Agenda médica:** gestión y seguimiento de citas con calendario interactivo.
+- **Expedientes médicos:** organización y documentación clínica por paciente.
+- **Recetas y exámenes:** gestión de información médica y resultados.
 - **Encuestas y formularios:** creación, configuración y captura de respuestas.
-- **Empresas y portales:** funcionalidades para la administración de empresas y sus usuarios.
+- **Empresas y portales:** administración de empresas y acceso diferenciado para sus usuarios.
 - **Inventario y punto de venta:** administración de productos, movimientos y operaciones comerciales.
-- **Reportes:** herramientas para consultar y organizar información operativa.
-- **Integraciones externas:** funcionalidades que dependen de servicios y credenciales configurados por entorno.
-
-*La disponibilidad de cada funcionalidad depende de la configuración y de los servicios externos necesarios para ejecutarla.*
-
-## Tecnologías
-
-| Área | Tecnologías |
-|---|---|
-| Frontend | React, TypeScript, Vite |
-| Backend | Node.js, Express, TypeScript |
-| Base de datos | PostgreSQL |
-| ORM y acceso a datos | Prisma |
-| Infraestructura | Docker, Nginx |
-| Desarrollo de interfaces | CSS y Tailwind CSS |
-
-## Arquitectura general
-
-Mediwork utiliza una arquitectura cliente-servidor que separa la interfaz de usuario, la lógica de negocio y la persistencia de datos.
-
-```text
-Mediwork
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── stores/
-│   └── package.json
-│
-├── backend/
-│   ├── src/
-│   │   ├── middleware/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── scripts/
-│   ├── prisma/
-│   └── package.json
-│
-├── docker-compose.yml
-├── Dockerfile.nginx
-└── README.md
-```
-
-El frontend se comunica con el backend mediante servicios y rutas de API. El backend centraliza la lógica de negocio y utiliza Prisma para interactuar con PostgreSQL.
-
-## Mi contribución
-
-Durante el desarrollo de Mediwork participé en el liderazgo y la construcción técnica del sistema, trabajando en diferentes componentes de la solución:
-
-- Desarrollo de interfaces y componentes del frontend.
-- Implementación de funcionalidades y endpoints del backend.
-- Diseño e integración de modelos de datos con PostgreSQL y Prisma.
-- Desarrollo de funcionalidades de autenticación y gestión de usuarios.
-- Implementación e integración de módulos administrativos y médicos.
-- Integración de servicios externos y configuración de funcionalidades dependientes del entorno.
-- Organización y evolución de la arquitectura de la aplicación.
-
-Mi participación abarcó tanto el desarrollo de funcionalidades como la integración de los distintos componentes necesarios para construir una solución web integral.
-
-## Estructura del repositorio
-
-| Directorio o archivo | Descripción |
-|---|---|
-| `frontend/` | Aplicación web y componentes de interfaz. |
-| `backend/` | API, lógica de negocio y servicios del sistema. |
-| `backend/prisma/` | Esquema y recursos relacionados con la base de datos. |
-| `docker-compose.yml` | Configuración de servicios para el entorno de desarrollo. |
-| `docker-compose.prod.yml` | Configuración orientada al despliegue. |
-| `nginx.conf` | Configuración de Nginx. |
-
-## Configuración y ejecución
-
-El proyecto requiere un entorno de desarrollo compatible con Node.js, PostgreSQL y las dependencias definidas por cada aplicación.
-
-Para preparar un entorno local:
-
-1. Clonar el repositorio.
-2. Instalar las dependencias del frontend y del backend.
-3. Configurar las variables de entorno a partir de los archivos `.env.example`.
-4. Configurar una instancia de PostgreSQL y los servicios externos necesarios.
-5. Aplicar las migraciones de base de datos que correspondan al esquema del proyecto.
-6. Ejecutar el frontend y el backend siguiendo sus configuraciones respectivas.
-
-**Nota:** Las instrucciones anteriores son una guía general. Los comandos concretos y las variables necesarias deben verificarse en los archivos de configuración del repositorio. No se incluyen credenciales de producción.
-
-## Información adicional
-
-Este repositorio se presenta como parte de mi portafolio profesional para mostrar experiencia en desarrollo web full-stack, integración de sistemas, diseño de bases de datos y construcción de aplicaciones modulares.
-
-Algunas funcionalidades pueden requerir servicios externos, variables de entorno y credenciales que no están disponibles en este repositorio. Por ello, no se garantiza que la aplicación pueda ejecutarse completamente con una configuración local básica.
+- **Reportes:** consulta y organización de información operativa.
+- **Tiempo real:** notificaciones y actualizaciones en vivo mediante WebSockets.
+- **Integraciones externas:** Google AI, WhatsApp, OneDrive, Google Drive, Nodemailer.
 
 ---
 
-**Mediwork — Desarrollo web full-stack y gestión integral de procesos médicos.**
+## Stack tecnológico
+
+| Área | Tecnologías |
+|---|---|
+| Frontend | React 18, TypeScript, Vite |
+| Estilos | Tailwind CSS |
+| Estado y datos | Zustand, TanStack React Query |
+| Formularios | React Hook Form, Zod |
+| Gráficas y calendario | Recharts, FullCalendar |
+| Backend | Node.js, Express, TypeScript |
+| Base de datos | PostgreSQL 16 |
+| ORM | Prisma |
+| Autenticación | JWT, bcrypt |
+| Tiempo real | Socket.IO |
+| Generación de PDF | jsPDF, pdf-lib |
+| IA | Google Generative AI (Gemini) |
+| Infraestructura | Docker, Docker Compose, Nginx |
+| Almacenamiento | OneDrive / Google Drive (configurable) |
+
+---
+
+## Roles del sistema
+
+| Rol | Función principal |
+|---|---|
+| **Master** | Acceso total al sistema. |
+| **Admin** | Gestión de usuarios, configuración y reportes. |
+| **Doctor** | Atención de pacientes, expedientes y agenda. |
+| **Agent** | Gestión de citas y operaciones administrativas. |
+| **Empresa** | Portal para consultar resultados de sus empleados. |
+| **Paciente** | Acceso a su propio expediente y resultados. |
+| **Paciente Tablet** | Acceso de quiosco para captura de encuestas. |
+
+---
+
+## Arquitectura general
+
+```text
+┌────────────────────────────────────────┐
+│              Usuario / Browser         │
+└───────────────────┬────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────┐
+│              Nginx (proxy)             │
+│           http://localhost:3000        │
+└──────────┬─────────────────┬───────────┘
+           │                 │
+           ▼                 ▼
+┌──────────────────┐  ┌──────────────────┐
+│  Frontend        │  │  Backend API     │
+│  React + Vite    │  │  Node.js/Express │
+│  :5173           │  │  :4000           │
+└──────────────────┘  └────────┬─────────┘
+                               │ Prisma ORM
+                               ▼
+                    ┌──────────────────┐
+                    │   PostgreSQL 16  │
+                    │   :5432          │
+                    └──────────────────┘
+```
+
+---
+
+## Capturas de pantalla
+
+<!-- Espacio reservado para capturas con datos ficticios/demo -->
+*Próximamente.*
+
+---
+
+## Estructura del repositorio
+
+```text
+mediwork/
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizables
+│   │   ├── pages/          # Vistas por módulo
+│   │   ├── services/       # Llamadas a la API
+│   │   └── stores/         # Estado global (Zustand)
+│   └── package.json
+├── backend/
+│   ├── src/
+│   │   ├── middleware/     # Autenticación y validaciones
+│   │   ├── routes/         # Endpoints de la API
+│   │   ├── services/       # Lógica de negocio
+│   │   └── scripts/        # Utilidades y migraciones
+│   ├── prisma/             # Esquema y configuración de la BD
+│   └── package.json
+├── docker-compose.yml       # Servicios para desarrollo
+├── docker-compose.prod.yml  # Configuración para producción
+├── Dockerfile.nginx
+├── nginx.conf
+└── .env.example
+```
+
+---
+
+## Instalación y ejecución
+
+### Requisitos previos
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### Ejecución con Docker
+
+```bash
+git clone <url-del-repositorio>
+cd mediwork
+cp .env.example .env
+# Edita .env con tus credenciales y servicios externos
+docker compose up --build
+```
+
+| Servicio | Dirección |
+|---|---|
+| Aplicación (vía Nginx) | http://localhost:3000 |
+| Frontend directo | http://localhost:5173 |
+| Backend API | http://localhost:4000 |
+| PostgreSQL | localhost:5432 |
+
+Para detener:
+
+```bash
+docker compose down
+```
+
+---
+
+## Variables de entorno
+
+El proyecto requiere un archivo `.env` basado en `.env.example`.
+
+```env
+JWT_SECRET=change-me-in-prod-please
+
+# Almacenamiento en la nube (OneDrive o Google Drive, opcional)
+CLOUD_STORAGE_PROVIDER=onedrive
+ONEDRIVE_TENANT_ID=
+ONEDRIVE_CLIENT_ID=
+ONEDRIVE_CLIENT_SECRET=
+
+# WhatsApp Business API
+WHATSAPP_PHONE_NUMBER_ID=
+WHATSAPP_ACCESS_TOKEN=
+
+# Google AI (Gemini)
+GOOGLE_API_KEY=
+```
+
+> **Importante:** no incluyas credenciales reales en el repositorio. El archivo `.env` nunca debe subirse al control de versiones.
+
+---
+
+## Contexto del proyecto
+
+Proyecto desarrollado durante una experiencia profesional en **Laia Technologies**.
+
+---
+
+**Mediwork** 🏥  
+*Tecnología para la gestión integral de procesos médicos.*
