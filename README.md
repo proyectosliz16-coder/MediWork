@@ -132,8 +132,8 @@ mediwork/
 ### Ejecución con Docker
 
 ```bash
-git clone <url-del-repositorio>
-cd mediwork
+git clone https://github.com/proyectosliz16-coder/MediWork.git
+cd MediWork
 cp .env.example .env
 # Edita .env con tus credenciales y servicios externos
 docker compose up --build
@@ -185,5 +185,5 @@ Proyecto desarrollado durante una experiencia profesional en **Laia Technologies
 
 ---
 
-**Mediwork** 🏥  
+**Mediwork** 
 *Tecnología para la gestión integral de procesos médicos.*
