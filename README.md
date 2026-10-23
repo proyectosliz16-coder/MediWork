@@ -24,6 +24,30 @@ Mediwork es una plataforma web para la gestión y digitalización de procesos m�
 
 ---
 
+## Capturas de pantalla
+
+### Dashboard principal
+Vista general del sistema con indicadores clave, accesos directos y métricas operativas.
+
+![Dashboard de Mediwork](docs/screenshots/dash.png)
+
+### Agenda médica
+Gestión y programación de citas con calendario interactivo y visualización por especialista.
+
+![Agenda médica](docs/screenshots/agenda.png)
+
+### Control de inventario
+Administración y consulta del catálogo de armazones, productos y existencias.
+
+![Inventario](docs/screenshots/inventario.png)
+
+### Punto de venta (POS) y cotizador
+Módulo de ventas, cotizaciones guiadas y registro de transacciones comerciales.
+
+![Punto de venta](docs/screenshots/punto%20de%20venta.png)
+
+---
+
 ## Stack tecnológico
 
 | Área | Tecnologías |
@@ -49,13 +73,13 @@ Mediwork es una plataforma web para la gestión y digitalización de procesos m�
 
 | Rol | Función principal |
 |---|---|
-| **Master** | Acceso total al sistema. |
-| **Admin** | Gestión de usuarios, configuración y reportes. |
-| **Doctor** | Atención de pacientes, expedientes y agenda. |
+| **Master** | Acceso total al sistema y configuración avanzada. |
+| **Admin** | Gestión de usuarios, configuración y reportes generales. |
+| **Doctor** | Atención de pacientes, expedientes clínicos y agenda médica. |
 | **Agent** | Gestión de citas y operaciones administrativas. |
-| **Empresa** | Portal para consultar resultados de sus empleados. |
-| **Paciente** | Acceso a su propio expediente y resultados. |
-| **Paciente Tablet** | Acceso de quiosco para captura de encuestas. |
+| **Empresa** | Portal para consultar resultados de empleados corporativos. |
+| **Paciente** | Acceso a su propio expediente y resultados clínicos. |
+| **Paciente Tablet** | Acceso en modo quiosco para captura guiada de encuestas. |
 
 ---
 
@@ -85,13 +109,6 @@ Mediwork es una plataforma web para la gestión y digitalización de procesos m�
                     │   :5432          │
                     └──────────────────┘
 ```
-
----
-
-## Capturas de pantalla
-
-<!-- Espacio reservado para capturas con datos ficticios/demo -->
-*Próximamente.*
 
 ---
 
@@ -185,5 +202,5 @@ Proyecto desarrollado durante una experiencia profesional en **Laia Technologies
 
 ---
 
-**Mediwork** 
+**Mediwork** 🏥  
 *Tecnología para la gestión integral de procesos médicos.*
