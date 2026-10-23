@@ -202,5 +202,5 @@ Proyecto desarrollado durante una experiencia profesional en **Laia Technologies
 
 ---
 
-**Mediwork** 🏥  
+**Mediwork** 
 *Tecnología para la gestión integral de procesos médicos.*
